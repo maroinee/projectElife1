@@ -23,9 +23,13 @@
             </div>
         </div>
 
-        <div *ngIf="successMessage" class="flex justify-center mt-6">
-            <p class="px-4 py-2 leading-5 text-green-600 bg-green-200 rounded-md">{{ successMessage }}</p>
-        </div>
+        <div *ngIf="successMessage" class="success-message">
+            {{ successMessage }}
+          </div>
+          
+          <div *ngIf="errorMessage" class="error-message">
+            {{ errorMessage }}
+          </div>
 
         <div class="flex justify-center mt-6">
             <button type="submit" [disabled]="!validateForm.valid" class="px-8 py-2.5 leading-5 text-white transition-colors duration-300 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600">Sign In</button>
