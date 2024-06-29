@@ -28,15 +28,19 @@ public class UserController {
 
     @PostMapping("/login")
     public ResponseEntity<?> loginUser(@RequestBody User loginRequest) {
-        Optional<User> user = userService.getUserByEmail(loginRequest.getEmail());
+        Optional<User> userOptional = userService.getUserByEmail(loginRequest.getEmail());
 
-        if (user.isPresent() && user.get().getPassword().equals(loginRequest.getPassword())) {
-            return ResponseEntity.ok(user.get());
+        if (userOptional.isPresent()) {
+            User user = userOptional.get();
+            if (user.getPassword().equals(loginRequest.getPassword())) {
+                return ResponseEntity.ok(user);
+            } else {
+                return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid email or password");
+            }
         } else {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid email or password");
         }
     }
-
     
     @GetMapping("/{id}")
     public ResponseEntity<?> getUserById(@PathVariable Long id) {

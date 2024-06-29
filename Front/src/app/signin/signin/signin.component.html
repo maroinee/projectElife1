@@ -1,6 +1,11 @@
 <app-navbar></app-navbar>
-<section class="max-w-4xl p-6 mx-auto bg-gray-800 rounded-md shadow-md mt-36 mb-12">
-    <h2 class="text-lg font-semibold text-white capitalize text-center">Sign-In</h2>
+<section class="max-w-4xl p-6 mx-auto bg-gray-800 rounded-md shadow-md mt-12 mb-12">
+  <h2 class="text-lg font-semibold text-white capitalize text-center">Sign-In</h2>
+
+  <!-- Message de succès -->
+  <div class="success-message" [ngClass]="{ 'hide': !successMessage }">
+    {{ successMessage }}
+  </div>
 
     <form [formGroup]="validateForm" (ngSubmit)="submitForm()">
         <div class="grid grid-cols-1 gap-6 mt-4">

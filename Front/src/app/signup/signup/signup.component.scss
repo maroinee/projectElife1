@@ -1,1 +1,30 @@
 
+/* styles.scss */
+
+/* Classes pour les messages de succès et d'erreur */
+.success-message, .error-message {
+    font-size: 16px;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    width: 100%;
+    text-align: center;
+    opacity: 0; /* Initialement invisible */
+    transition: opacity 0.3s ease-in-out; /* Transition d'opacité pour l'animation */
+  }
+  
+  .success-message {
+    background-color: #4caf50; /* Couleur de fond verte pour les messages de succès */
+    color: #ffffff; /* Texte blanc */
+  }
+  
+  .error-message {
+    background-color: #f44336; /* Couleur de fond rouge pour les messages d'erreur */
+    color: #ffffff; /* Texte blanc */
+  }
+  
+  /* Classe pour masquer les messages (utilisée après la transition) */
+  .hide {
+    display: none;
+  }
+  

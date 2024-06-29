@@ -1,10 +1,10 @@
 package com.example.project.Service;
 
 import java.util.List;
-import java.util.Optional;
+
 
 import com.example.project.Entity.PostUser;
-import com.example.project.Entity.User;
+
 
 public interface PostService {
     PostUser savePost(PostUser post);

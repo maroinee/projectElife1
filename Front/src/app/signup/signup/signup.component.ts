@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from '../../service/AuthService/auth.service';
 
 @Component({
@@ -7,13 +8,12 @@ import { AuthService } from '../../service/AuthService/auth.service';
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.scss']
 })
-export class SignupComponent implements OnInit {
+export class SignupComponent {
   validateForm!: FormGroup;
+  errorMessage: string = '';
   successMessage: string = '';
 
-  constructor(private fb: FormBuilder, private authService: AuthService) {}
-
-  ngOnInit(): void {
+  constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) {
     this.validateForm = this.fb.group({
       nom: ['', Validators.required],
       prenom: ['', Validators.required],
@@ -21,8 +21,8 @@ export class SignupComponent implements OnInit {
       password: ['', Validators.required],
       lieux: ['', Validators.required],
       groupsang: ['', Validators.required],
-      cin: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(8)]],
-      telephone: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10)]],
+      cin: ['', Validators.required],
+      telephone: ['', Validators.required],
       sexe: ['', Validators.required],
       dateBirthday: ['', Validators.required]
     });
@@ -30,17 +30,22 @@ export class SignupComponent implements OnInit {
 
   submitForm(): void {
     if (this.validateForm.valid) {
-      console.log('Formulaire valide soumis : ', this.validateForm.value);
-      
-      // Appel du service d'authentification pour l'inscription
       this.authService.signup(this.validateForm.value).subscribe(
         response => {
           console.log('Inscription réussie : ', response);
           this.successMessage = 'Inscription réussie !';
+
+          // Redirection vers le tableau de bord (dashboard) après l'inscription
+          this.router.navigate(['/signin']);
+
+          // Effacer le message de succès après quelques secondes
+          setTimeout(() => {
+            this.successMessage = '';
+          }, 5000); // 5000 ms = 5 secondes
         },
         error => {
           console.error('Erreur lors de l\'inscription : ', error);
-          // Gérer l'erreur ici (par exemple, afficher un message d'erreur à l'utilisateur)
+          this.errorMessage = 'Erreur lors de l\'inscription. Veuillez réessayer plus tard.';
         }
       );
     } else {

@@ -9,8 +9,8 @@ import { DashboardComponent } from './Dashboard/dashboard/dashboard.component';
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'acceuil', component: AcceuilComponent },
-  {path:"signup" , component:SignupComponent},
-  {path:"signin" , component:SigninComponent},
+  {path:'signup' , component:SignupComponent},
+  {path:'signin' , component:SigninComponent},
   { path: 'dashboard', component: DashboardComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
 ];

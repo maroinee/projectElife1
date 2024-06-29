@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.project.Entity.PostUser;
-import com.example.project.Entity.User;
+
 import com.example.project.Reposotiry.PostRepository;
 
 import jakarta.persistence.EntityNotFoundException;

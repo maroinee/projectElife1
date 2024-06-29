@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 import com.example.project.Entity.User;
 import com.example.project.Reposotiry.UserRepository;
 
+import jakarta.persistence.EntityNotFoundException;
+
 
 
 @Service
@@ -52,5 +54,7 @@ public void deleteUser(Long id) {
 public Optional<User> getUserByEmail(String email) {
     return userRepository.findByEmail(email);
 }
+
+
 
 }
