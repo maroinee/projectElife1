@@ -7,7 +7,7 @@ import { DashboardComponent } from './Dashboard/dashboard/dashboard.component';
 const routes: Routes = [
   {path:"signup" , component:SignupComponent},
   {path:"signin" , component:SigninComponent},
-  { path: '', redirectTo: '/signin', pathMatch: 'full' },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
 ];
 
