@@ -15,6 +15,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // Importez le NavbarComponent ici
 import { SignupComponent } from './signup/signup/signup.component';
 import { SigninComponent } from './signin/signin/signin.component';
+import { DashboardComponent } from './Dashboard/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { SigninComponent } from './signin/signin/signin.component';
     AcceuilComponent,
     NavbarComponent, // Déclarez le NavbarComponent ici
     SignupComponent,
-    SigninComponent
+    SigninComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

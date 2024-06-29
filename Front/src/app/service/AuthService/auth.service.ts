@@ -32,6 +32,16 @@ export class AuthService {
       );
   }
 
+  // Méthode pour récupérer le profil utilisateur
+  getUserProfile(): Observable<any> {
+    const url = `${this.baseUrl}/profile`; // Adapter l'URL selon votre API backend pour récupérer le profil
+    // Ajouter les en-têtes ou jetons d'authentification si nécessaire
+    return this.http.get<any>(url)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
   // Gestion des erreurs HTTP
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {

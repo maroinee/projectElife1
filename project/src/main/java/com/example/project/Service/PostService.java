@@ -1,8 +1,10 @@
 package com.example.project.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.example.project.Entity.PostUser;
+import com.example.project.Entity.User;
 
 public interface PostService {
     PostUser savePost(PostUser post);
@@ -12,4 +14,5 @@ public interface PostService {
     void deletePost(Long postId);
     void likePost(Long postId);
     List<PostUser> searchByLieux(String lieux);
+    
 }

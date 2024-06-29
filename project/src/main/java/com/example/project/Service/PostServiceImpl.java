@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.project.Entity.PostUser;
+import com.example.project.Entity.User;
 import com.example.project.Reposotiry.PostRepository;
 
 import jakarta.persistence.EntityNotFoundException;
@@ -16,6 +17,8 @@ import jakarta.persistence.EntityNotFoundException;
 public class PostServiceImpl  implements PostService{
     @Autowired
     private PostRepository postRepository;
+
+    
 
     @Override
     public PostUser savePost(PostUser post) {
@@ -92,6 +95,8 @@ public class PostServiceImpl  implements PostService{
     public List<PostUser> searchByLieux(String lieux) {
         return postRepository.findByLieux(lieux);
     }
+
+   
 
     
 
