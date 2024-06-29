@@ -1,0 +1,133 @@
+<section class="max-w-4xl p-6 mx-auto bg-gray-800 rounded-md shadow-md mt-12 mb-12">
+    <h2 class="text-lg font-semibold text-white capitalize text-center">Sign-Up</h2>
+  
+    <form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+      <div class="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
+        <!-- Nom -->
+        <div>
+          <label class="text-gray-200" for="nom">Nom</label>
+          <input id="nom" type="text" formControlName="nom"
+            class="block w-full px-4 py-2 mt-2 text-gray-300 bg-gray-700 border border-gray-600 rounded-md focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring">
+          <div *ngIf="validateForm.get('nom')?.touched && validateForm.get('nom')?.hasError('required')" class="text-red-500 mt-1">
+            Nom is required.
+          </div>
+        </div>
+  
+        <!-- Prenom -->
+        <div>
+          <label class="text-gray-200" for="prenom">Prenom</label>
+          <input id="prenom" type="text" formControlName="prenom"
+            class="block w-full px-4 py-2 mt-2 text-gray-300 bg-gray-700 border border-gray-600 rounded-md focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring">
+          <div *ngIf="validateForm.get('prenom')?.touched && validateForm.get('prenom')?.hasError('required')" class="text-red-500 mt-1">
+            Prenom is required.
+          </div>
+        </div>
+  
+        <!-- Email -->
+        <div>
+          <label class="text-gray-200" for="email">Email</label>
+          <input id="email" type="email" formControlName="email"
+            class="block w-full px-4 py-2 mt-2 text-gray-300 bg-gray-700 border border-gray-600 rounded-md focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring">
+          <div *ngIf="validateForm.get('email')?.touched && validateForm.get('email')?.hasError('required')" class="text-red-500 mt-1">
+            Email is required.
+          </div>
+          <div *ngIf="validateForm.get('email')?.touched && validateForm.get('email')?.hasError('email')" class="text-red-500 mt-1">
+            Invalid email format.
+          </div>
+        </div>
+  
+        <!-- Password -->
+        <div>
+          <label class="text-gray-200" for="password">Password</label>
+          <input id="password" type="password" formControlName="password"
+            class="block w-full px-4 py-2 mt-2 text-gray-300 bg-gray-700 border border-gray-600 rounded-md focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring">
+          <div *ngIf="validateForm.get('password')?.touched && validateForm.get('password')?.hasError('required')" class="text-red-500 mt-1">
+            Password is required.
+          </div>
+        </div>
+  
+        <!-- Lieux -->
+        <div>
+          <label class="text-gray-200" for="lieux">Lieux</label>
+          <input id="lieux" type="text" formControlName="lieux"
+            class="block w-full px-4 py-2 mt-2 text-gray-300 bg-gray-700 border border-gray-600 rounded-md focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring">
+          <div *ngIf="validateForm.get('lieux')?.touched && validateForm.get('lieux')?.hasError('required')" class="text-red-500 mt-1">
+            Lieux is required.
+          </div>
+        </div>
+  
+        <!-- Groupe Sanguin -->
+        <div>
+          <label class="text-gray-200" for="groupsang">Groupe Sanguin</label>
+          <select id="groupsang" formControlName="groupsang"
+            class="block w-full px-4 py-2 mt-2 text-gray-300 bg-gray-700 border border-gray-600 rounded-md focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring">
+            <option value="">Select</option>
+            <option value="A+">A+</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B-">B-</option>
+            <option value="AB+">AB+</option>
+            <option value="AB-">AB-</option>
+            <option value="O+">O+</option>
+            <option value="O-">O-</option>
+          </select>
+          <div *ngIf="validateForm.get('groupsang')?.touched && validateForm.get('groupsang')?.hasError('required')" class="text-red-500 mt-1">
+            Groupe Sanguin is required.
+          </div>
+        </div>
+  
+        <!-- CIN -->
+        <div>
+          <label class="text-gray-200" for="cin">CIN</label>
+          <input id="cin" type="number" formControlName="cin"
+            class="block w-full px-4 py-2 mt-2 text-gray-300 bg-gray-700 border border-gray-600 rounded-md focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring">
+          <div *ngIf="validateForm.get('cin')?.touched && validateForm.get('cin')?.hasError('required')" class="text-red-500 mt-1">
+            CIN is required.
+          </div>
+        </div>
+  
+        <!-- Telephone -->
+        <div>
+          <label class="text-gray-200" for="telephone">Telephone</label>
+          <input id="telephone" type="number" formControlName="telephone"
+            class="block w-full px-4 py-2 mt-2 text-gray-300 bg-gray-700 border border-gray-600 rounded-md focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring">
+          <div *ngIf="validateForm.get('telephone')?.touched && validateForm.get('telephone')?.hasError('required')" class="text-red-500 mt-1">
+            Telephone is required.
+          </div>
+        </div>
+  
+        <!-- Sexe -->
+        <div>
+          <label class="text-gray-200" for="sexe">Sexe</label>
+          <select id="sexe" formControlName="sexe"
+            class="block w-full px-4 py-2 mt-2 text-gray-300 bg-gray-700 border border-gray-600 rounded-md focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring">
+            <option value="">Select</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+          <div *ngIf="validateForm.get('sexe')?.touched && validateForm.get('sexe')?.hasError('required')" class="text-red-500 mt-1">
+            Sexe is required.
+          </div>
+        </div>
+  
+        <!-- Date de Naissance -->
+        <div>
+          <label class="text-gray-200" for="dateBirthday">Date de Naissance</label>
+          <input id="dateBirthday" type="date" formControlName="dateBirthday"
+            class="block w-full px-4 py-2 mt-2 text-gray-300 bg-gray-700 border border-gray-600 rounded-md focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring">
+          <div *ngIf="validateForm.get('dateBirthday')?.touched && validateForm.get('dateBirthday')?.hasError('required')" class="text-red-500 mt-1">
+            Date of Birth is required.
+          </div>
+        </div>
+      </div>
+  
+      <div class="flex justify-center mt-6">
+        <button type="submit" [disabled]="!validateForm.valid"
+          class="px-8 py-2.5 leading-5 text-white transition-colors duration-300 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600">Sign-up</button>
+      </div>
+    </form>
+    <div *ngIf="successMessage" class="flex justify-center mt-6">
+      <p class="px-4 py-2 leading-5 text-green-600 bg-green-200 rounded-md">{{ successMessage }}</p>
+    </div>
+  </section>
+  

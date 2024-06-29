@@ -48,4 +48,9 @@ public void deleteUser(Long id) {
     userRepository.deleteById(id);
 }
 
+@Override
+public Optional<User> getUserByEmail(String email) {
+    return userRepository.findByEmail(email);
+}
+
 }

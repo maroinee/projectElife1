@@ -13,11 +13,24 @@ import com.example.project.Service.UserServiceImpl;
 import java.util.Optional;
 
 @RestController
+//@CrossOrigin(origins = "http://localhost:50674")
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/api/users")
 public class UserController {
 
     @Autowired
     private UserServiceImpl userService;
+
+    @PostMapping("/login")
+    public ResponseEntity<?> loginUser(@RequestBody User loginRequest) {
+        Optional<User> user = userService.getUserByEmail(loginRequest.getEmail());
+
+        if (user.isPresent() && user.get().getPassword().equals(loginRequest.getPassword())) {
+            return ResponseEntity.ok(user.get());
+        } else {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid email or password");
+        }
+    }
 
     
     @GetMapping("/{id}")
