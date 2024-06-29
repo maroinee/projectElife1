@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import com.example.project.Entity.User;
+
 import com.example.project.Service.UserServiceImpl;
 
 import java.util.Optional;
@@ -20,6 +21,10 @@ public class UserController {
 
     @Autowired
     private UserServiceImpl userService;
+
+   
+
+
 
     @PostMapping("/login")
     public ResponseEntity<?> loginUser(@RequestBody User loginRequest) {
