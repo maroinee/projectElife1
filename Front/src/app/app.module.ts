@@ -39,7 +39,11 @@ const appRoutes: Routes = [
     NavbarComponent,
     SignupComponent,
     SigninComponent,
-    DashboardComponent
+    DashboardComponent,
+    SidebarComponent,
+    CreatePostComponent,
+    ViewPostComponent,
+    ViewAllComponent
   ],
   imports: [
     BrowserModule,

@@ -8,6 +8,7 @@ import { DashboardComponent } from './Dashboard/dashboard/dashboard.component';
 import { CreatePostComponent } from './CreatePostUser/createPost/create-post/create-post.component';
 import { ViewPostComponent } from './CreatePostUser/viewPost/view/view.component';
 import { ViewAllComponent } from './CreatePostUser/viewAll/view-al/view-al.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'create-post', component: CreatePostComponent },
   { path: 'view/:id', component: ViewPostComponent },
   { path: 'view-al', component:ViewAllComponent },
+  { path: 'sidebar', component:SidebarComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
 ];
 
