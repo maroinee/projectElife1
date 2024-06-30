@@ -1,27 +1,23 @@
-body {
-  padding-top: 64px; /* Adjust this value based on the height of your navbar */
-}
-
 .navbar {
-  position: fixed; /* Fix the navbar at the top */
-  top: 0; /* Position it at the top of the page */
-  width: 100%; /* Make sure it spans the entire width */
-  z-index: 1000; /* Ensure it is above other content */
-  background-color: white; /* Ensure the navbar has a background color */
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Add a shadow for better visibility */
+  position: fixed; /* Fixe la navbar en haut */
+  top: 0; /* Positionne-la en haut de la page */
+  width: 100%; /* La barre de navigation occupe toute la largeur */
+  z-index: 1000; /* Assurez-vous qu'elle est au-dessus du contenu */
+  background-color: white; /* Fond blanc pour la barre de navigation */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Ombre légère pour une meilleure visibilité */
 }
 
 .spacer {
-  flex: 1 1 auto;
+  flex: 1 1 auto; /* Espace flexible pour pousser les boutons à droite */
 }
 
 .big-button {
-  font-size: 1.2em; /* Adjust the size as needed */
-  padding: 0 20px;  /* Adjust the padding as needed */
+  font-size: 1.2em; /* Taille du texte du bouton principal */
+  padding: 0 20px; /* Espacement intérieur du bouton principal */
 }
 
 mat-toolbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: flex; /* Affiche les éléments en flexbox */
+  justify-content: space-between; /* Répartit les éléments sur toute la largeur */
+  align-items: center; /* Centre les éléments verticalement */
 }

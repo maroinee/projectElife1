@@ -1,45 +1,44 @@
-/* side-bar.component.scss */
-
 .example-container {
-    height: 100vh; /* Hauteur de la fenêtre entière */
-    display: flex;
-  }
-  
-  mat-sidenav {
-    width: 250px; /* Largeur de la barre latérale */
-    background-color: #2196f3; /* Couleur de fond de la barre latérale (rose Material) */
-    color: white; /* Couleur du texte de la barre latérale */
-    position: fixed; /* Fixe le sidebar */
-    top: 0; /* Le sidebar commence depuis le haut de la fenêtre */
-    bottom: 0; /* Le sidebar va jusqu'au bas de la fenêtre */
-    display: flex;
-    flex-direction: column;
-  }
-  
-  mat-toolbar {
-    padding: 8px 16px; /* Espacement intérieur des mat-toolbar */
-  }
-  
-  mat-toolbar button.mat-button {
-    width: 100%; /* Largeur totale du bouton dans mat-toolbar */
-    text-align: left; /* Alignement du texte à gauche */
-    color: white; /* Couleur du texte */
-  }
-  
-  mat-toolbar button.mat-button:hover {
-    background-color: #62f0e4; /* Couleur de fond au survol (rose plus clair) */
-  }
-  
-  mat-sidenav-content {
-    flex: 1; /* Fait en sorte que le contenu prenne tout l'espace restant */
-    padding: 20px; /* Espacement autour du contenu principal */
-    margin-left: 250px; /* Décale le contenu à droite pour laisser de la place au sidebar */
-    overflow-y: auto; /* Ajoute un scroll si le contenu dépasse */
-  }
-  
-  /* Styles spécifiques au contenu principal */
-  mat-sidenav-content p,
-  mat-sidenav-content h1 {
-    margin-bottom: 20px; /* Espacement entre les paragraphes et les titres */
-  }
-  
+  height: 100vh; /* Hauteur de la fenêtre entière */
+  display: flex; /* Affichage en flexbox pour la structure */
+}
+
+mat-sidenav {
+  width: 250px; /* Largeur fixe de la barre latérale */
+  background-color: #2196f3; /* Couleur de fond de la barre latérale */
+  color: white; /* Couleur du texte de la barre latérale */
+  position: fixed; /* Fixe la barre latérale */
+  top: 64px; /* Commence 64px en-dessous du haut de la page (hauteur de la navbar) */
+  bottom: 0; /* Va jusqu'au bas de la fenêtre */
+  display: flex; /* Affichage en flexbox pour les éléments internes */
+  flex-direction: column; /* Orientation verticale */
+}
+
+mat-toolbar {
+  padding: 8px 16px; /* Espacement intérieur des mat-toolbar */
+}
+
+mat-toolbar button.mat-button {
+  width: 100%; /* Largeur totale du bouton dans mat-toolbar */
+  text-align: left; /* Alignement du texte à gauche */
+  color: white; /* Couleur du texte */
+  margin: 0; /* Enlève les marges autour des boutons */
+  padding: 8px 16px; /* Espacement interne des boutons */
+}
+
+mat-toolbar button.mat-button:hover {
+  background-color: #62f0e4; /* Couleur de fond au survol */
+}
+
+mat-sidenav-content {
+  flex: 1; /* Prend tout l'espace restant */
+  padding: 20px; /* Espacement autour du contenu principal */
+  margin-left: 250px; /* Décalage pour laisser place à la barre latérale */
+  overflow-y: auto; /* Ajout de défilement vertical si nécessaire */
+}
+
+/* Styles spécifiques au contenu principal */
+mat-sidenav-content p,
+mat-sidenav-content h1 {
+  margin-bottom: 20px; /* Espacement entre les paragraphes et les titres */
+}
