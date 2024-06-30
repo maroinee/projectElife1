@@ -12,22 +12,38 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AcceuilComponent } from './acceuil/acceuil.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // Importez le NavbarComponent ici
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 import { SignupComponent } from './signup/signup/signup.component';
 import { SigninComponent } from './signin/signin/signin.component';
 import { DashboardComponent } from './Dashboard/dashboard/dashboard.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { CreatePostComponent } from './CreatePostUser/createPost/create-post/create-post.component';
+import { ViewPostComponent } from './CreatePostUser/viewPost/view/view.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { ViewAllComponent } from './CreatePostUser/viewAll/view-al/view-al.component';
+import { RouterModule, Routes } from '@angular/router'; 
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+
+const appRoutes: Routes = [
+  { path: 'view-post/:id', component: ViewPostComponent }, // Example route definition, adjust as needed
+  { path: 'view-all', component: ViewAllComponent },
+  // Add more routes as necessary
+];
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     AcceuilComponent,
-    NavbarComponent, // Déclarez le NavbarComponent ici
+    NavbarComponent,
     SignupComponent,
     SigninComponent,
     DashboardComponent,
-    SidebarComponent
+    SidebarComponent,
+    CreatePostComponent,
+    ViewPostComponent,
+    ViewAllComponent
   ],
   imports: [
     BrowserModule,
@@ -41,6 +57,10 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
+    MatSnackBarModule,
+    RouterModule.forRoot(appRoutes) ,
+    MatFormFieldModule, // Importez MatFormFieldModule ici
+    MatInputModule, 
   ],
   providers: [],
   bootstrap: [AppComponent]
