@@ -5,6 +5,9 @@ import { AcceuilComponent } from './acceuil/acceuil.component';
 import { SignupComponent } from './signup/signup/signup.component';
 import { SigninComponent } from './signin/signin/signin.component';
 import { DashboardComponent } from './Dashboard/dashboard/dashboard.component';
+import { CreatePostComponent } from './CreatePostUser/createPost/create-post/create-post.component';
+import { ViewPostComponent } from './CreatePostUser/viewPost/view/view.component';
+import { ViewAllComponent } from './CreatePostUser/viewAll/view-al/view-al.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -12,6 +15,9 @@ const routes: Routes = [
   {path:'signup' , component:SignupComponent},
   {path:'signin' , component:SigninComponent},
   { path: 'dashboard', component: DashboardComponent },
+  { path: 'create-post', component: CreatePostComponent },
+  { path: 'view/:id', component: ViewPostComponent },
+  { path: 'view-al', component:ViewAllComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
 ];
 

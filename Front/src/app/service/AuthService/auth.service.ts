@@ -8,7 +8,7 @@ import { catchError } from 'rxjs/operators';
 })
 export class AuthService {
 
-  private baseUrl = 'http://localhost:8080/api/users'; // Base URL de votre backend
+  private baseUrl = 'http://localhost:8080/api/users'; // URL de base de votre API backend
 
   constructor(private http: HttpClient) {}
 
@@ -36,6 +36,16 @@ export class AuthService {
   getUserProfile(): Observable<any> {
     const url = `${this.baseUrl}/profile`; // Adapter l'URL selon votre API backend pour récupérer le profil
     // Ajouter les en-têtes ou jetons d'authentification si nécessaire
+    return this.http.get<any>(url)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
+  // Méthode pour récupérer l'utilisateur actuel (exemple d'implémentation)
+  getCurrentUser(): Observable<any> {
+    // Exemple : Supposons que vous ayez un point de terminaison pour récupérer les détails de l'utilisateur actuel
+    const url = `${this.baseUrl}/current-user`; // Adapter selon votre API backend
     return this.http.get<any>(url)
       .pipe(
         catchError(this.handleError)
