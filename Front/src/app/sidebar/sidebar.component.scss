@@ -1,0 +1,45 @@
+/* side-bar.component.scss */
+
+.example-container {
+    height: 100vh; /* Hauteur de la fenêtre entière */
+    display: flex;
+  }
+  
+  mat-sidenav {
+    width: 250px; /* Largeur de la barre latérale */
+    background-color: #2196f3; /* Couleur de fond de la barre latérale (rose Material) */
+    color: white; /* Couleur du texte de la barre latérale */
+    position: fixed; /* Fixe le sidebar */
+    top: 0; /* Le sidebar commence depuis le haut de la fenêtre */
+    bottom: 0; /* Le sidebar va jusqu'au bas de la fenêtre */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  mat-toolbar {
+    padding: 8px 16px; /* Espacement intérieur des mat-toolbar */
+  }
+  
+  mat-toolbar button.mat-button {
+    width: 100%; /* Largeur totale du bouton dans mat-toolbar */
+    text-align: left; /* Alignement du texte à gauche */
+    color: white; /* Couleur du texte */
+  }
+  
+  mat-toolbar button.mat-button:hover {
+    background-color: #62f0e4; /* Couleur de fond au survol (rose plus clair) */
+  }
+  
+  mat-sidenav-content {
+    flex: 1; /* Fait en sorte que le contenu prenne tout l'espace restant */
+    padding: 20px; /* Espacement autour du contenu principal */
+    margin-left: 250px; /* Décale le contenu à droite pour laisser de la place au sidebar */
+    overflow-y: auto; /* Ajoute un scroll si le contenu dépasse */
+  }
+  
+  /* Styles spécifiques au contenu principal */
+  mat-sidenav-content p,
+  mat-sidenav-content h1 {
+    margin-bottom: 20px; /* Espacement entre les paragraphes et les titres */
+  }
+  

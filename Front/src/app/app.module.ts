@@ -16,6 +16,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SignupComponent } from './signup/signup/signup.component';
 import { SigninComponent } from './signin/signin/signin.component';
 import { DashboardComponent } from './Dashboard/dashboard/dashboard.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 import { CreatePostComponent } from './CreatePostUser/createPost/create-post/create-post.component';
 import { ViewPostComponent } from './CreatePostUser/viewPost/view/view.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
@@ -38,10 +39,7 @@ const appRoutes: Routes = [
     NavbarComponent,
     SignupComponent,
     SigninComponent,
-    DashboardComponent,
-    CreatePostComponent,
-    ViewPostComponent,
-    ViewAllComponent
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
