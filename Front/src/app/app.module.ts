@@ -24,6 +24,9 @@ import { ViewAllComponent } from './CreatePostUser/viewAll/view-al/view-al.compo
 import { RouterModule, Routes } from '@angular/router'; 
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { CreateHComponent } from './CreateH/create-h/create-h.component';
+import { CreateEComponent } from './createE/create-e/create-e.component';
+import { ContactComponent } from './contact/contact/contact.component';
 
 const appRoutes: Routes = [
   { path: 'view-post/:id', component: ViewPostComponent }, // Example route definition, adjust as needed
@@ -43,7 +46,10 @@ const appRoutes: Routes = [
     SidebarComponent,
     CreatePostComponent,
     ViewPostComponent,
-    ViewAllComponent
+    ViewAllComponent,
+    CreateHComponent,
+    CreateEComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,

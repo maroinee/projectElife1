@@ -9,6 +9,9 @@ import { CreatePostComponent } from './CreatePostUser/createPost/create-post/cre
 import { ViewPostComponent } from './CreatePostUser/viewPost/view/view.component';
 import { ViewAllComponent } from './CreatePostUser/viewAll/view-al/view-al.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { CreateHComponent } from './CreateH/create-h/create-h.component';
+import { CreateEComponent } from './createE/create-e/create-e.component';
+import { ContactComponent } from './contact/contact/contact.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -20,6 +23,9 @@ const routes: Routes = [
   { path: 'view/:id', component: ViewPostComponent },
   { path: 'view-al', component:ViewAllComponent },
   { path: 'sidebar', component:SidebarComponent },
+  { path: 'create-h', component:CreateHComponent },
+  { path: 'create-e', component:CreateEComponent},
+  { path: 'contact', component:ContactComponent},
   { path: '', redirectTo: '/home', pathMatch: 'full' },
 ];
 
