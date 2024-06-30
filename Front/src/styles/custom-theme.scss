@@ -1,11 +1,11 @@
-// src/styles/custom-theme.scss
-
 @use '@angular/material' as mat;
 
 // Définissez votre palette de couleurs personnalisées
 $custom-primary: mat.define-palette(mat.$indigo-palette, 500, 100, 700);
 $custom-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
-$custom-warn: mat.define-palette(mat.$amber-palette);
+
+// Utilisez une couleur prédéfinie pour bleu ciel pour warn
+$custom-warn: mat.define-palette(mat.$blue-palette, 500);
 
 // Créez un thème de matériau personnalisé avec vos palettes
 $custom-theme: mat.define-light-theme((
