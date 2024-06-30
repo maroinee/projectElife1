@@ -35,7 +35,7 @@ export class SignupComponent {
           console.log('Inscription réussie : ', response);
           this.successMessage = 'Inscription réussie !';
 
-          // Redirection vers le tableau de bord (dashboard) après l'inscription
+          // Redirection vers signin
           this.router.navigate(['/signin']);
 
           // Effacer le message de succès après quelques secondes

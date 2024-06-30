@@ -1,0 +1,31 @@
+<!-- side-bar.component.html -->
+<mat-sidenav-container class="example-container">
+    <mat-sidenav mode="side" opened>
+      <mat-toolbar color="warn">
+        <button mat-button class="big-button" routerLink="/">DimaDon</button>
+      </mat-toolbar>
+      <mat-toolbar color="warn">
+        <button mat-button routerLink="/acceuil">Accueil</button>
+      </mat-toolbar>
+      <mat-toolbar color="warn">
+        <button mat-button routerLink="/">Annonces</button>
+      </mat-toolbar>
+      <mat-toolbar color="warn">
+        <button mat-button routerLink="/">Collectes de sang </button>
+      </mat-toolbar>
+      <mat-toolbar color="warn">
+        <button mat-button routerLink="/">Contact</button>
+      </mat-toolbar>
+      <mat-toolbar color="warn">
+        <button mat-button routerLink="/signup">Sign Up</button>
+      </mat-toolbar>
+      <mat-toolbar color="warn">
+        <button mat-button routerLink="/signin">Sign In</button>
+      </mat-toolbar>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <!-- Your main content goes here -->
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  

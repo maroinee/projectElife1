@@ -1,7 +1,54 @@
-/* You can add global styles to this file, and also import other style files */
- @tailwind base;
+@tailwind base;
 @tailwind components;
 @tailwind utilities; 
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+    padding-top: 64px; /* Adjust this value based on the height of your navbar */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .navbar {
+    position: fixed; /* Fix the navbar at the top */
+    top: 0; /* Position it at the top of the page */
+    width: 100%; /* Make sure it spans the entire width */
+    z-index: 1000; /* Ensure it is above other content */
+    background-color: white; /* Ensure the navbar has a background color */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Add a shadow for better visibility */
+  }
+  
+  .spacer {
+    flex: 1 1 auto;
+  }
+  
+  .big-button {
+    font-size: 1.2em; /* Adjust the size as needed */
+    padding: 0 20px;  /* Adjust the padding as needed */
+  }
+  
+  mat-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  mat-toolbar .mat-button {
+    margin: 0 10px; /* Add some margin between buttons */
+  }
+  
+  .container {
+    margin-top: 20px; /* Adjust as needed */
+    padding-left: 250px; /* Adjust this value based on the width of your sidebar */
+    padding: 20px;
+    flex-grow: 1;
+  }
+  
+  app-sidebar {
+    position: fixed;
+    left: 0;
+    top: 64px; /* Adjust this value based on the height of your navbar */
+    width: 250px; /* Set the width of the sidebar */
+    height: calc(100vh - 64px);/* Make it take the full height of the page */
+    background-color: #f4f4f4; /* Set a background color for the sidebar */
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1); /* Optional: add a shadow for better visibility */
+  }
+  
